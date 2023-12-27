@@ -1,11 +1,17 @@
-// popup.js
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const el = document.getElementById('generateBtn');
+    let delay = 1000;
     if (el) {
         el.addEventListener('click', function () {
-            const fortune = generateFortune();
-            document.getElementById('fortune').innerText = fortune;
+            const body = document.getElementsByTagName("body");
+            body[0].style.backgroundImage = "url('open-cookie.jpg')";
+            setTimeout(function(){
+                const fortune = generateFortune();
+                document.getElementById('fortune').innerText = fortune;
+            }, delay);
+            delay = 0;
         });
     }
 
